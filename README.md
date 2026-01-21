@@ -38,3 +38,5 @@ Successfully compromised the target system and gained root-level access, demonst
 - Disable vulnerable network services
 - Implement firewall rules
 - Apply least-privilege principles
+  
+## Screenshots
