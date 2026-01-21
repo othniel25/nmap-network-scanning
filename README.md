@@ -1,24 +1,40 @@
-# nmap-network-scanning
-# Network Scanning & Enumeration with Nmap
+# kioptrix-penetration-test
+# Kioptrix Penetration Testing Lab
 
 ## Objective
-To perform network reconnaissance by identifying live hosts, open ports, and running services using Nmap, simulating an initial phase of a real-world attack.
+To simulate a real-world penetration test against a vulnerable Linux system (Kioptrix) by performing reconnaissance, exploitation, and privilege escalation.
+
+## Environment
+- Attacker Machine: Kali Linux
+- Target Machine: Kioptrix Level 1
+- Network Type: Host-only / NAT
 
 ## Tools Used
 - Nmap
-- Kali Linux
+- Nikto
+- Metasploit
+- Linux enumeration tools
 
 ## Methodology
-1. Conducted host discovery to identify active devices
-2. Performed TCP SYN scans to identify open ports
-3. Detected running services and versions
-4. Analysed results to identify potential security risks
+1. Network discovery and host identification
+2. Port scanning and service enumeration
+3. Vulnerability identification
+4. Exploitation of vulnerable services
+5. Gaining shell access
+6. Privilege escalation to root
 
 ## Results
-Multiple open ports and services were identified, highlighting possible attack surfaces that could be exploited if left unprotected.
+Successfully compromised the target system and gained root-level access, demonstrating multiple critical security weaknesses.
 
 ## Key Skills Demonstrated
 - Network reconnaissance
-- Attack surface analysis
-- Understanding of TCP/IP networking
-- Security risk identification
+- Vulnerability assessment
+- Exploitation techniques
+- Linux privilege escalation
+- Penetration testing workflow
+
+## Mitigation Recommendations
+- Patch outdated services
+- Disable vulnerable network services
+- Implement firewall rules
+- Apply least-privilege principles
