@@ -35,5 +35,35 @@ nmap --script smb-os-discovery.nse -p445 10.129.1.160
 <img width="856" height="312" alt="image" src="https://github.com/user-attachments/assets/5b3d246c-0a6d-472d-b5ae-37bab8df3b4a" />
 
 nmap -A -p445 10.129.1.160
+
 <img width="895" height="528" alt="image" src="https://github.com/user-attachments/assets/b307e45a-8fd8-4a79-9d5d-c400a24c4706" />
+
+<img width="875" height="603" alt="image" src="https://github.com/user-attachments/assets/ead5c4df-8632-4c6f-a1b5-a43aec3afe1b" />
+Breakdown of the Command
+
+-A → Enables:
+
+OS detection
+
+Version detection
+
+Script scanning
+
+Traceroute
+
+-p445 → Scans only port 445 (SMB)
+
+10.129.1.160 → Target IP address
+
+Purpose
+
+To perform in-depth enumeration of the SMB service running on port 445 and gather information about:
+
+Operating system
+
+SMB version
+
+Host details
+
+
 
