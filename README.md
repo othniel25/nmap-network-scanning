@@ -28,6 +28,7 @@ Access the flag directory
 Retrieve contents of flag.txt
 
 🔎 Phase 1 – SMB Share Enumeration
+
 Command Used
 
 nmap --script smb-os-discovery.nse -p445 10.129.1.160
@@ -65,5 +66,35 @@ SMB version
 
 Host details
 
+smbclient -N -L \\\\10.129.1.160
+<img width="870" height="441" alt="image" src="https://github.com/user-attachments/assets/ea88f73f-128e-4eed-8e78-368cfab8ecb9" />
 
+Breakdown:
 
+-N → No password (anonymous login)
+
+-L → List available shares
+
+\\10.129.1.160 → Target host
+Findings
+
+Discovered three shares: print$, users, and IPC$
+
+Anonymous authentication allowed share listing
+
+SMBv1 negotiation failed
+
+Security Analysis
+
+The failure to negotiate SMBv1 suggests that the server has deprecated the insecure SMBv1 protocol and likely supports SMBv2 or SMBv3 instead. This reduces exposure to legacy SMB vulnerabilities such as MS17-010 (EternalBlue).
+
+However, the ability to list shares anonymously increases the attack surface and may allow further enumeration.
+
+smbclient -U bob \\10.129.1.160\users
+
+<img width="876" height="573" alt="Screenshot 2026-02-11 235148" src="https://github.com/user-attachments/assets/19df3124-96da-4230-abdf-95e00deb9acb" />
+<img width="884" height="376" alt="Screenshot 2026-02-11 235220" src="https://github.com/user-attachments/assets/f9fd0420-2e8b-49b4-a49a-df2d08b622c3" />
+
+🔎 Findings
+
+While enumerating the users SMB share as user bob, I identified a directory structure containing user-specific folders. Within Bob’s directory, a file named passwords.txt was discovered and successfully retrieved.
