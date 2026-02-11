@@ -29,6 +29,11 @@ Retrieve contents of flag.txt
 
 🔎 Phase 1 – SMB Share Enumeration
 Command Used
+
 nmap --script smb-os-discovery.nse -p445 10.129.1.160
+
 <img width="856" height="312" alt="image" src="https://github.com/user-attachments/assets/5b3d246c-0a6d-472d-b5ae-37bab8df3b4a" />
+
+nmap -A -p445 10.129.1.160
+<img width="895" height="528" alt="image" src="https://github.com/user-attachments/assets/b307e45a-8fd8-4a79-9d5d-c400a24c4706" />
 
