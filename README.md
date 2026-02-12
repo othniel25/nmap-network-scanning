@@ -1,4 +1,4 @@
- Phase 1 – Enumeration
+ Enumeration
  platform: Hack the Box
 Network Scan
 
@@ -98,3 +98,13 @@ smbclient -U bob \\10.129.1.160\users
 🔎 Findings
 
 While enumerating the users SMB share as user bob, I identified a directory structure containing user-specific folders. Within Bob’s directory, a file named passwords.txt was discovered and successfully retrieved.
+
+🌐 Web Enumeration Phase
+
+Directory Brute Force
+
+I performed directory brute-forcing to discover hidden files and directories that might lead to an entry point or sensitive information.
+
+Tool: Gobuster
+I used Gobuster v3.6 in dir mode to enumerate the web server.
+🔍 Results AnalysisThe scan revealed several interesting endpoints:PathStatus CodeSignificance/index.php200 OKThe main landing page of the application./robots.txt200 OKOften contains clues about hidden directories meant to be "hidden" from search engines./wordpress301 RedirectHigh Priority: Indicates a WordPress installation is present./.htaccess / /.hta403 ForbiddenServer configuration files; confirmed the server is likely Apache./server-status403 ForbiddenStandard Apache status page, access is restricted.
