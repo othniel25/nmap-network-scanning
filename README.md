@@ -106,5 +106,21 @@ Directory Brute Force
 I performed directory brute-forcing to discover hidden files and directories that might lead to an entry point or sensitive information.
 
 Tool: Gobuster
-I used Gobuster v3.6 in dir mode to enumerate the web server.
-🔍 Results AnalysisThe scan revealed several interesting endpoints:PathStatus CodeSignificance/index.php200 OKThe main landing page of the application./robots.txt200 OKOften contains clues about hidden directories meant to be "hidden" from search engines./wordpress301 RedirectHigh Priority: Indicates a WordPress installation is present./.htaccess / /.hta403 ForbiddenServer configuration files; confirmed the server is likely Apache./server-status403 ForbiddenStandard Apache status page, access is restricted.
+<img width="867" height="615" alt="Screenshot 2026-02-12 084235" src="https://github.com/user-attachments/assets/22f99cf7-b5d1-4cb2-8ebc-5c70c834a5f8" />
+<img width="866" height="466" alt="Screenshot 2026-02-12 084327" src="https://github.com/user-attachments/assets/c7634e36-2e59-4217-9609-225d05a9a460" />
+
+Purpose
+
+To discover hidden directories and web application endpoints.
+
+Findings
+
+/admin
+
+/login
+
+/uploads
+
+Analysis
+
+The presence of an exposed login page suggests potential for credential-based access, especially when combined with credentials discovered via SMB enumeration.
