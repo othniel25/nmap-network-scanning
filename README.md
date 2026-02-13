@@ -113,14 +113,4 @@ Purpose
 
 To discover hidden directories and web application endpoints.
 
-Findings
-
-/admin
-
-/login
-
-/uploads
-
-Analysis
-
 The presence of an exposed login page suggests potential for credential-based access, especially when combined with credentials discovered via SMB enumeration.
